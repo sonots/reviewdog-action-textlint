@@ -1,0 +1,14 @@
+name: "Pipeline for Prd environment"
+on:
+  pull_request:
+    branches:
+      - "release"
+    types: [opened]
+
+jobs:
+  create-release-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo
+      run: |
+        echo opened
