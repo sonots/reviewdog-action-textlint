@@ -8,21 +8,19 @@ on:
 jobs:
   create-release-pr:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
     - uses: actions/checkout@v2
-      if: github.event.pull_request.merged == true
       with:
         # fetch all history to find all related pull requests.
         fetch-depth: 0
 
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
-      if: github.event.pull_request.merged == true
       with:
         ruby-version: 2.6.x
 
     - name: Create a release pull request
-      if: github.event.pull_request.merged == true
       env:
         GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GIT_PR_RELEASE_BRANCH_PRODUCTION: release
