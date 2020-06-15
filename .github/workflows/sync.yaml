@@ -3,10 +3,10 @@ on:
   pull_request:
     branches:
       - "release"
-    types: [synchronized]
+    types: [labeled]
 
 jobs:
-  create-release-pr:
+  sync:
     runs-on: ubuntu-latest
     steps:
     - name: echo
