@@ -1,14 +1,14 @@
-name: "Sync"
+name: "Labeled"
 on:
   pull_request:
     branches:
       - "release"
-    types: [synchronized]
+    types: [labeled]
 
 jobs:
-  sync:
+  labeled:
     runs-on: ubuntu-latest
     steps:
     - name: echo
       run: |
-        echo sync
+        echo labeled
