@@ -1,0 +1,14 @@
+name: "Sync"
+on:
+  pull_request:
+    branches:
+      - "release"
+    types: [synchronized]
+
+jobs:
+  create-release-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo
+      run: |
+        echo sync
