@@ -1,6 +1,3 @@
-hoge
-
-
 # Slack Notice Action
 
 ![](https://github.com/sonots/slack-notice-action/workflows/build-test/badge.svg)
