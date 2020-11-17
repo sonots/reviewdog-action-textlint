@@ -1,0 +1,14 @@
+name: "Labeled"
+on:
+  pull_request:
+    branches:
+      - "release"
+    types: [labeled]
+
+jobs:
+  labeled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo
+      run: |
+        echo labeled
